@@ -29,7 +29,7 @@ procedure editFolder
   number_of_formants = number(number_of_formants$)
 
   maximum_plotting_frequency = maximum_plotting_frequency
-  strs = Create Strings as file list: "list", folder$ + "/formants_edited/*_winner_.Formant"
+  strs = Create Strings as file list: "list", folder$ + "/formants_winners/*_winner_.Formant"
   nfiles = Get number of strings
 
 
@@ -37,7 +37,7 @@ procedure editFolder
     selectObject: strs
     filename$ = Get string: iii
     basename$ = filename$ - "_winner_.Formant"
-    fr = Read from file: folder$ + "/formants_edited/"+ filename$
+    fr = Read from file: folder$ + "/formants_winners/"+ filename$
     Rename: filename$ + "_edited_"
 
     snd = Read from file: folder$ + "/sounds/"+ basename$ + ".wav"
